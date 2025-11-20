@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvpumbrfin1f5"]
+
+[ext_resource type="Texture2D" uid="uid://bniyrxn3r2v8h" path="res://assets/ship.png" id="1_f7cmv"]
+[ext_resource type="Script" uid="uid://cnr57kmp1ut1x" path="res://lessons/ship.gd" id="2_mehiu"]
+[ext_resource type="Script" uid="uid://boardar7ack62" path="res://timer.gd" id="3_lt4yx"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(972, 605)
+texture = ExtResource("1_f7cmv")
+script = ExtResource("2_mehiu")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource("3_lt4yx")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
